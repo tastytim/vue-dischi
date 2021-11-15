@@ -29,10 +29,15 @@ export default {
 @import "src/styles/loader.scss";
 
 
+
 html, body {
   margin: 0px ;
   padding: 0px ;
   box-sizing: border-box;
+}
+
+html{
+  background-color: $bg-secondary;
 }
 
 
