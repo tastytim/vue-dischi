@@ -1,0 +1,16 @@
+@import "variables.scss";
+
+
+.header{
+    background-color: $bg-secondary;
+    height: 80px;
+    .container{
+        display: flex;
+        height: 80px;
+        align-items:center;
+        img{
+            margin-left:10px;
+            width: 30px;
+        }
+    }
+}
