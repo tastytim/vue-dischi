@@ -26,6 +26,7 @@ export default {
 @import "src/styles/footer.scss";
 @import "src/styles/header.scss";
 @import "src/styles/variables.scss";
+@import "src/styles/loader.scss";
 
 
 html, body {

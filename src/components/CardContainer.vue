@@ -10,8 +10,11 @@
           :year="item.year"
         >
         </Card>
+        
+
       </div>
       </div>
+      <Loader v-if="loading === true"></Loader>
     </div>
   </section>
 </template>
@@ -19,20 +22,26 @@
 <script>
 import axios from "axios";
 import Card from "./Card.vue";
+import Loader from "./Loader.vue";
 export default {
   name: "CardContainer",
-  components  : {Card},
+  components  : {Card, Loader},
   data(){
       return {
           cardsList : [],
+          loading: true,
       }
   },
   mounted(){
+    this.loading=true;
       axios.get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
           this.cardsList = resp.data.response;
+          setTimeout(() => {
+            this.loading=false;
+          }, 2000)
       });
-  }
+  },
 };
 </script>
 
