@@ -1,28 +1,43 @@
 <template>
   <div class="filterbar">
     <select name="filter" id="filtergenre" v-model="key" @change="startFilter">
-      <option selected value="">All</option>
-      <option value="rock">Rock</option>
-      <option value="pop">Pop</option>
-      <option value="jazz">Jazz</option>
-      <option value="metal">Metal</option>
+      <option selected value="">All</option><option
+        v-for="(item, index) in filterOptions(data)"
+        :key="index"
+        :value="item"
+      >
+        {{item}}
+      </option>
     </select>
   </div>
 </template>
 
 <script>
 export default {
-  name: "FilterBar",
-  data(){
-      return{
-          key : ""
-      }
+  props: {
+    data: [],
   },
-  methods:{
-     startFilter(){
-         this.$emit("filterMade", this.key);
-     }
-  }
+  name: "FilterBar",
+  data() {
+    return {
+      key: ""
+    };
+  },
+  methods: {
+    startFilter() {
+      this.$emit("filterMade", this.key);
+    },
+    filterOptions(data) {
+      let newList = [];
+      data.forEach((element) => {
+        if (!newList.includes(element.genre)) {
+          newList.push(element.genre);
+        }
+      });
+      return newList.sort();
+    },
+  },
+  computed: {},
 };
 </script>
 

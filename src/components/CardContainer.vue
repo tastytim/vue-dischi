@@ -1,7 +1,7 @@
 <template>
   <section class="cardcontainer">
     <div class="container">
-      <FilterBar @filterMade="onFilterMade"> </FilterBar>
+      <FilterBar @filterMade="onFilterMade" :data="cardsList"> </FilterBar>
       <div
         class="
           row
@@ -53,7 +53,7 @@ export default {
         this.filteredCardsList = this.cardsList;
         setTimeout(() => {
           this.loading = false;
-        }, 2000);
+        }, 300);
       });
   },
   methods : {
