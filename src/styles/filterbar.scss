@@ -1,0 +1,12 @@
+@import "variables.scss";
+
+.filterbar{
+    padding: 15px 0;
+    select{
+        padding: 3px 0;
+        background-color: $bg-secondary;
+        border: 3px solid $bg-primary;
+        border-radius: 8px;
+        margin-left: -3px ;
+    }
+}

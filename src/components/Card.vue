@@ -17,7 +17,7 @@ export default {
     title: String,
     author: String,
     genre: String,
-    year: Number,
+    year: String,
   },
 };
 </script>

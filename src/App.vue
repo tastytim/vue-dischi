@@ -27,6 +27,7 @@ export default {
 @import "src/styles/header.scss";
 @import "src/styles/variables.scss";
 @import "src/styles/loader.scss";
+@import "src/styles/filterbar.scss";
 
 
 
